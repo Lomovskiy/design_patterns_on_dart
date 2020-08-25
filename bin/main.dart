@@ -1,15 +1,12 @@
-import 'package:design_patterns_on_dart/state.dart';
+import 'package:design_patterns_on_dart/strategy.dart';
 
 void main() {
 
-  var order = Order(AssignedState());
-  order.handleInput(InputType.PRESS_ADD_PHOTO_BUTTON);
-  order.handleInput(InputType.PRESS_START_WORK_BUTTON);
-  order.handleInput(InputType.PRESS_ADD_PHOTO_BUTTON);
-  order.handleInput(InputType.PRESS_POSTPONE_BUTTON);
-  order.handleInput(InputType.PRESS_ADD_PHOTO_BUTTON);
-  order.handleInput(InputType.PRESS_ADD_PHOTO_BUTTON);
-  order.handleInput(InputType.PRESS_END_WORK_BUTTON);
-  order.handleInput(InputType.PRESS_START_WORK_BUTTON);
+  var navigator = Navigator(PublicTransportStrategy());
+  navigator.buildRoute(1.0, 2.0);
+  navigator.setStrategy(CarStrategy());
+  navigator.buildRoute(3.0, 4.0);
+  navigator.setStrategy(PublicTransportStrategy());
+  navigator.buildRoute(5.0, 6.0);
 
 }
