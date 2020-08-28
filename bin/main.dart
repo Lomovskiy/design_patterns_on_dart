@@ -1,12 +1,16 @@
 import 'package:design_patterns_on_dart/strategy.dart';
+import 'package:design_patterns_on_dart/template.dart';
 
 void main() {
 
-  var navigator = Navigator(PublicTransportStrategy());
-  navigator.buildRoute(1.0, 2.0);
-  navigator.setStrategy(CarStrategy());
-  navigator.buildRoute(3.0, 4.0);
-  navigator.setStrategy(PublicTransportStrategy());
-  navigator.buildRoute(5.0, 6.0);
+  Sportsman sportsman = Runner();
+  sportsman.doWorkout();
+  print('---');
+  sportsman = Bodybuilder();
+  sportsman.doWorkout();
+  print('---');
+  sportsman = Cyclist();
+  sportsman.doWorkout();
+  print('---');
 
 }
