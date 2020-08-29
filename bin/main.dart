@@ -1,16 +1,16 @@
-import 'package:design_patterns_on_dart/strategy.dart';
-import 'package:design_patterns_on_dart/template.dart';
+import 'package:design_patterns_on_dart/visitor.dart';
 
 void main() {
 
-  Sportsman sportsman = Runner();
-  sportsman.doWorkout();
-  print('---');
-  sportsman = Bodybuilder();
-  sportsman.doWorkout();
-  print('---');
-  sportsman = Cyclist();
-  sportsman.doWorkout();
-  print('---');
+  final figures = <Figure>[];
+
+  figures.add(Triangle());
+  figures.add(Circle());
+  figures.add(Rectangle());
+
+  final colorDrawer = ColorDrawer();
+  final blackWhiteDrawer = BlackWhiteDrawer();
+
+  figures.forEach(colorDrawer.draw);
 
 }
