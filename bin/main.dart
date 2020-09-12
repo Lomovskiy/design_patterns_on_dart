@@ -1,4 +1,4 @@
-import 'package:design_patterns_on_dart/command.dart';
+import 'package:design_patterns_on_dart/behavioral/command.dart';
 
 void main() {
 
